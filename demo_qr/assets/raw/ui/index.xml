@@ -1,0 +1,12 @@
+<window anim_hint="htranslate" style="sky"> 
+
+  <slide_view style="dot" name="slide" x="0" y="20" w="90%" h="90%">
+    <view name="view_one" x="0" y="0" w="100%" h="100%" layout="row:3 col:3 m:10 s:10">
+      <view>
+        <button name="open:sale" style="sale_style" x="c" w="55%" h="55%"/> 
+        <label name="tec_qq" x="c" y="button:50" w="15.4%" h="3.8%" style="default" text="售卖机"/>
+      </view>
+    </view>
+  </slide_view>
+
+</window>

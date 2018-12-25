@@ -1,0 +1,15 @@
+<dialog anim_hint="bottom_to_top" x="0" y="bottom" w="100%" h="50%">
+  <dialog_title x="0" y="0" w="100%" h="30" text="请扫码支付" />
+  <dialog_client name="qr_dialog" x="0" y="bottom" w="100%" h="-30" layout="r1 c0 m20">
+    <qr name="qr_code" style="qr_border" x="c" y="0" w="100%" h="100%" text="致远" pix_size="3"/>
+  </dialog_client>
+</dialog>
+
+
+<!-- <view x="c" y="0" w="100%" h="50%"> -->
+  
+<!-- </view> -->
+<!-- <view x="c" y="0" w="100%" h="50%">
+  <button name="quit" x="10" y="bottom:10" w="40%" h="30" text="Yes"/>
+  <button name="quit" x="right:10" y="bottom:10" w="40%" h="30" text="No"/>
+</view> -->

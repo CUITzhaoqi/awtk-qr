@@ -1,0 +1,29 @@
+<system_bar>
+  <style name="default">
+    <!-- <normal bg_color="#404040"/> -->
+    <normal bg_image="g_background"/>
+  </style>
+</system_bar>
+<label>
+  <style name="title" text_align_h="left">
+    <normal text_color="red" />
+  </style>
+  <style name="mut_title" >
+    <normal text_color="white" font_size="10" font_name="default" text_align_h="center"/>
+  </style>
+</label>
+
+<digit_clock>
+  <style name="time">
+    <normal text_color="white" />
+  </style>
+</digit_clock>
+
+<button>
+  <style name="close" icon="earth">
+    <normal     icon="close_n"/>
+    <pressed    icon="close_p"/>
+    <over       icon="close_n"/>
+    <disable    icon="close_d"/>
+  </style>
+</button>

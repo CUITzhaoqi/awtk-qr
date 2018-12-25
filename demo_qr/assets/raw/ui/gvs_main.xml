@@ -1,0 +1,12 @@
+<window anim_hint="htranslate" style="sky"> 
+  <label name="dis_ifname" x="0" y="2" w="22.5%" h="5.7%" text="HOME"/>
+  <label name="dis_date" x="170" y="2" w="19.79%" h="5.7%" text="6-24"/>
+  <label name="dis_time" x="242" y="2" w="16.67%" h="5.7%" text="17:35"/>
+  <label name="dis_temp" x="330" y="2" w="7.5%" h="5.7%" text="25"/>
+
+  <slide_view style="dot" name="slide" x="0" y="0" w="90%" h="90%">
+    <view name="view_one" x="0" y="0" w="100%" h="100%" layout="w480 h800 m5 s10">
+    </view>
+  </slide_view>
+
+</window>

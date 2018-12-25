@@ -1,0 +1,23 @@
+<window anim_hint="htranslate" theme="tab_bottom" style="sky">
+
+  <!-- <view x="0" y="30%" w="50%" h="21%">
+    <image draw_type="icon" image="test" x="40%" y="0" w="32" h="100%" />
+  </view> -->
+  <view style="sale_border" x="0" y="-5%" w="100%" h="100%" >
+    <slide_view style="dot" name="slide" x="0" y="5%" w="100%" h="90%">
+      <view name="v_sale_layout" x="0" y="0" w="100%" h="100%" layout="row:4 col:3 m:10 s:10">
+        <view>
+          <image name="i_kele" selectable="true" style="selectable" draw_type="icon" image="kele" x="c" y="0" w="100%" h="100%" />
+          <label name="l_kele" x="c" y="m:55" w="100%" h="4%" style="default" text="QQ"/>
+        </view>
+        <view>
+          <image selectable="true" style="selectable" draw_type="icon" image="kele" x="c" y="0" w="100%" h="100%" />
+          <label name="tec_qq" x="c" y="m:55" w="100%" h="4%" style="default" text="QQ"/>
+        </view>         
+      </view>
+    </slide_view>
+  </view>
+  <button name="sale_ok" style="select_style" x="c" y="bottom:10" w="25%" h="62" text="我选好了" >
+    <!-- <gif image="loadding" y="0" x="right" w="30" h="100%"/> -->
+  </button>
+</window>

@@ -1,0 +1,15 @@
+import os
+
+env=DefaultEnvironment().Clone();
+BIN_DIR=os.environ['BIN_DIR'];
+LIB_DIR=os.environ['LIB_DIR'];
+
+env.Library(os.path.join(LIB_DIR, 'assets'), ['assets.c']);
+
+env['LIBS'] = ['assets'] + env['LIBS']
+env['LIBS'] = ['qrencode'] + env['LIBS']
+env['LIBS'] = ['awtk_qr'] + env['LIBS']
+
+
+env.Program(os.path.join(BIN_DIR, 'demo_awtk_qr'), ['awtk_demo_main.c', 'awtk_demo_ui_app.c']);
+

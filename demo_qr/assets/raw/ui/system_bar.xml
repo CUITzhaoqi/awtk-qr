@@ -1,0 +1,9 @@
+<system_bar h="30">
+  <column x="0" y="0" w="-40" h="100%">
+    <!-- <label style="title" x="10" y="m" w="55%" h="100%" name="title" text=""/> -->
+    <rich_text name="dis_title" x="0" y="m" w="22.5%" h="100%" text=""/>
+    <label name="dis_date" x="170" y="m" w="50%" h="100%" text=""/>
+    <!-- <digit_clock x="r" y="m" w="40%" h="100%" format="h:m"/> -->
+  </column>
+  <!-- <button style="close" x="r:5" y="m" w="26" h="26" name="close" text="x"/> -->
+</system_bar>

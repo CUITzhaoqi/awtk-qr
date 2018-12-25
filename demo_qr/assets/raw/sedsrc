@@ -1,0 +1,7 @@
+/b_return/ i \
+  <label name="dis_ifname" x="0" y="2" w="22.5%" h="5.7%" text="HOME"/>\
+  <label name="dis_date" x="170" y="2" w="19.79%" h="5.7%" text="6-24"/>\
+  <label name="dis_time" x="242" y="2" w="16.67%" h="5.7%" text="17:35"/>\
+  <label name="dis_temp" x="330" y="2" w="7.5%" h="5.7%" text="25"/>\
+  <image name="i_tempunit" image="g_ctemp" x="360" y="7" w="4.0%" h="2.8%"/>\
+  <image name="dis_networkstatus" image="e_g_netswitch_on" x="395" y="10" w="4.0%" h="5.7%"/>

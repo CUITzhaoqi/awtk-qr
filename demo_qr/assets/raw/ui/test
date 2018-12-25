@@ -1,0 +1,10 @@
+window	air_quality	480	800	sky			
+image	i_dashboard	75	103	480	312	dashboard	end
+label	l_leftzero	100	366	18	23	0	end
+label	l_leftbot	41	254	34	21	0.2	end
+label	i_lefubot	91	145	34	21	0.2	end
+label	l_top	224	83	34	21	0.5	end
+label	l_rubot	358	144	18	23	1	end
+label	l_rbot	408	254	18	23	2	end
+label	l_max	362	366	45	20	9.99	end
+window end
