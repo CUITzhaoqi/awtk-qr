@@ -6,23 +6,20 @@
 #include "assets/inc/strings/ko_KR.data"
 #include "assets/inc/strings/zh_CN.data"
 #include "assets/inc/strings/zh_TW.data"
+#include "assets/inc/styles/default.data"
 #include "assets/inc/styles/dialog.data"
-#include "assets/inc/styles/main.data"
-#include "assets/inc/styles/system_bar.data"
-#include "assets/inc/styles/tab_bottom.data"
-#include "assets/inc/styles/view.data"
-#include "assets/inc/styles/window1.data"
-#include "assets/inc/ui/gvs_main.data"
-#include "assets/inc/ui/index.data"
-#include "assets/inc/ui/loading.data"
-#include "assets/inc/ui/qq.data"
-#include "assets/inc/ui/qq_login.data"
+#include "assets/inc/styles/keyboard.data"
+#include "assets/inc/ui/keyboard.data"
 #include "assets/inc/ui/qr_test.data"
-#include "assets/inc/ui/sale.data"
-#include "assets/inc/ui/system_bar.data"
 #ifdef WITH_STB_IMAGE
 #include "assets/inc/images/a.res"
 #include "assets/inc/images/about.res"
+#include "assets/inc/images/arrow_down_n.res"
+#include "assets/inc/images/arrow_down_o.res"
+#include "assets/inc/images/arrow_down_p.res"
+#include "assets/inc/images/arrow_up_n.res"
+#include "assets/inc/images/arrow_up_o.res"
+#include "assets/inc/images/arrow_up_p.res"
 #include "assets/inc/images/check.res"
 #include "assets/inc/images/close.res"
 #include "assets/inc/images/contact.res"
@@ -66,6 +63,12 @@
 #else
 #include "assets/inc/images/a.data"
 #include "assets/inc/images/about.data"
+#include "assets/inc/images/arrow_down_n.data"
+#include "assets/inc/images/arrow_down_o.data"
+#include "assets/inc/images/arrow_down_p.data"
+#include "assets/inc/images/arrow_up_n.data"
+#include "assets/inc/images/arrow_up_o.data"
+#include "assets/inc/images/arrow_up_p.data"
 #include "assets/inc/images/check.data"
 #include "assets/inc/images/close.data"
 #include "assets/inc/images/contact.data"
@@ -126,6 +129,12 @@ ret_t assets_init(void) {
 #else
   assets_manager_add(rm, image_a);
   assets_manager_add(rm, image_about);
+  assets_manager_add(rm, image_arrow_down_n);
+  assets_manager_add(rm, image_arrow_down_o);
+  assets_manager_add(rm, image_arrow_down_p);
+  assets_manager_add(rm, image_arrow_up_n);
+  assets_manager_add(rm, image_arrow_up_o);
+  assets_manager_add(rm, image_arrow_up_p);
   assets_manager_add(rm, image_check);
   assets_manager_add(rm, image_close);
   assets_manager_add(rm, image_contact);
@@ -169,20 +178,11 @@ ret_t assets_init(void) {
   assets_manager_add(rm, strings_ko_KR);
   assets_manager_add(rm, strings_zh_CN);
   assets_manager_add(rm, strings_zh_TW);
+  assets_manager_add(rm, style_default);
   assets_manager_add(rm, style_dialog);
-  assets_manager_add(rm, style_main);
-  assets_manager_add(rm, style_system_bar);
-  assets_manager_add(rm, style_tab_bottom);
-  assets_manager_add(rm, style_view);
-  assets_manager_add(rm, style_window1);
-  assets_manager_add(rm, ui_gvs_main);
-  assets_manager_add(rm, ui_index);
-  assets_manager_add(rm, ui_loading);
-  assets_manager_add(rm, ui_qq);
-  assets_manager_add(rm, ui_qq_login);
+  assets_manager_add(rm, style_keyboard);
+  assets_manager_add(rm, ui_keyboard);
   assets_manager_add(rm, ui_qr_test);
-  assets_manager_add(rm, ui_sale);
-  assets_manager_add(rm, ui_system_bar);
 #ifdef WITH_VGCANVAS
 #endif/*WITH_VGCANVAS*/
 #endif

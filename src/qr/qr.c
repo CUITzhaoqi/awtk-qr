@@ -164,8 +164,6 @@ static ret_t qr_on_paint_border(widget_t* widget, canvas_t* c) {
     bitmap_t img;
     rect_t r;
     
-    wh_t w = widget->w / 2;
-    wh_t h = widget->h / 2;
     // x = (0 - widget->w) / 2 + x;
     QRcode *qr_code;
     qr_code = qr->qr_code_data;
@@ -175,13 +173,13 @@ static ret_t qr_on_paint_border(widget_t* widget, canvas_t* c) {
       /* 根据style 设置边框颜色 */
       canvas_set_fill_color(c, margin_color);   
       /* 上 */
-      canvas_fill_rect(c, w + 0, h + 0, margin + qr_code->width * qr->pix_size, margin);
+      canvas_fill_rect(c, 0, 0, margin + qr_code->width * qr->pix_size, margin);
       /* 右 */  
-      canvas_fill_rect(c, w + margin + qr_code->width * qr->pix_size, h + 0, margin, margin + qr_code->width * qr->pix_size);  
+      canvas_fill_rect(c, margin + qr_code->width * qr->pix_size, 0, margin, margin + qr_code->width * qr->pix_size);  
       /* 下 */  
-      canvas_fill_rect(c, w + margin, h + margin + qr_code->width * qr->pix_size, margin + qr_code->width * qr->pix_size, margin); 
+      canvas_fill_rect(c, margin, margin + qr_code->width * qr->pix_size, margin + qr_code->width * qr->pix_size, margin); 
       /* 左 */  
-      canvas_fill_rect(c, w + 0, h + margin, margin, margin + qr_code->width * qr->pix_size); 
+      canvas_fill_rect(c, 0, margin, margin, margin + qr_code->width * qr->pix_size); 
     }
 
     /* 二维码的logo图片 */
@@ -271,7 +269,7 @@ static const widget_vtable_t s_qr_vtable = {.size = sizeof(qr_t),
                                                 .on_event = qr_on_event,
                                                 .set_prop = qr_set_prop,
                                                 .get_prop = qr_get_prop,
-                                                .destroy = qr_destroy,
+                                                .on_destroy = qr_destroy,
                                                 .on_paint_begin = qr_on_paint_begin,
                                                 .on_paint_end   = qr_on_paint_end,
                                                 .on_paint_background = qr_on_paint_background,

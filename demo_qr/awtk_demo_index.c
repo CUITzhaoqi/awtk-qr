@@ -38,13 +38,28 @@
 #include "base/widget_factory.h"
 #include "ui_loader/ui_builder_default.h"
 #include "ext_widgets.h"
+#include "qr/qr.h"
 
-extern ret_t demo_loading_init();
+ret_t demo_qr_pix_size_changed(void* ctx, event_t* e)
+{
+  log_debug("-------------------------");
+  
+  widget_t *i_pix_size = (widget_t *)ctx;
+  log_debug("----%d----\r\n",edit_get_int(i_pix_size));
+  widget_t *q_qr_code = widget_lookup_all(qr_test, "qr_code", TRUE);
+  qr_set_pixsize(q_qr_code, edit_get_int(i_pix_size));
+  return RET_OK;
+}
 
-ret_t application_init() {
-  tk_ext_widgets_init();
-  awtk_set_locale_simplified_chinese();
-  /* 初始化记载窗口 */
-  awtk_demo_qr();
+ret_t awtk_demo_qr() 
+{
+  widget_factory_register(widget_factory(), WIDGET_TYPE_QR, qr_create);
+  widget_t *qr_test = window_open("qr_test");
+
+  widget_t *i_pix_size = widget_lookup(qr_test, "i_pix_size", TRUE);
+  widget_on(i_pix_size, EVT_VALUE_CHANGED, demo_qr_pix_size_changed, (void *)i_pix_size);
+  // install_click_hander(index);
+  
+  // timer_add(awtk_get_currtime, system_bar, 0);
   return RET_OK;
 }

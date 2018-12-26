@@ -1,15 +1,32 @@
-<dialog anim_hint="bottom_to_top" x="0" y="bottom" w="100%" h="50%">
-  <dialog_title x="0" y="0" w="100%" h="30" text="请扫码支付" />
-  <dialog_client name="qr_dialog" x="0" y="bottom" w="100%" h="-30" layout="r1 c0 m20">
-    <qr name="qr_code" style="qr_border" x="c" y="0" w="100%" h="100%" text="致远" pix_size="3"/>
-  </dialog_client>
-</dialog>
+<window anim_hint="htranslate" theme="tab_bottom" style="sky">
 
-
-<!-- <view x="c" y="0" w="100%" h="50%"> -->
-  
-<!-- </view> -->
-<!-- <view x="c" y="0" w="100%" h="50%">
-  <button name="quit" x="10" y="bottom:10" w="40%" h="30" text="Yes"/>
-  <button name="quit" x="right:10" y="bottom:10" w="40%" h="30" text="No"/>
-</view> -->
+  <view x="0" y="5%" w="90%" h="80%" layout="row:1 col:0 m:10 s:10">
+    <view x="0" y="5%" w="50%" h="50%" layout="row:1 col:0 m:10 s:10">
+      <qr name="qr_code" style="qr_border" x="c" y="0" w="100%" h="100%" text="致远" pix_size="3"/>
+    </view>
+    <view x="50%" y="5%" w="50%" h="50%" layout="row:0 col:1 m:10 s:10">
+      <list_item style="empty" children_layout="default(r=1,c=0)" x="0" y="0" w="90%" h="25">
+        <label w="50%" text="pix_size:"/>
+        <edit name="i_pix_size" w="50%" h="100%" right_margin="8" tips="映射关系" input_type="uint" min="1" max="8" step="1">
+          <button name="inc" repeat="300" style="spinbox_up" x="right" y="0" w="15" h="50%" />
+          <button name="dec" repeat="300" style="spinbox_down" x="right" y="bottom" w="15" h="50%" />
+        </edit>
+      </list_item>
+      <list_item style="empty" children_layout="default(r=1,c=0)" x="0" y="0" w="90%" h="25">
+        <label w="30%" text="Text"/>
+        <edit w="70%" left_margin="34" tips="显示内容" min="0" max="150" step="0.1">
+          <image draw_type="icon" image="find" x="0" y="0" w="30" h="100%" />
+        </edit>
+      </list_item>
+      <list_item style="empty" children_layout="default(r=1,c=0)" x="0" y="0" w="90%" h="25">
+        <label w="30%" text="Text"/>
+        <edit w="70%" left_margin="34" tips="显示颜色" min="0" max="150" step="0.1">
+          <image draw_type="icon" image="find" x="0" y="0" w="30" h="100%" />
+        </edit>
+      </list_item>
+      <list_item style="empty" children_layout="default(r=1,c=0)" x="c" y="0" w="90%" h="50">
+        <button name="sale_ok" style="select_style" x="c" y="0" w="25%" h="62" text="我选好了" />
+      </list_item>
+    </view>
+  </view>
+</window>

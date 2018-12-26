@@ -11,5 +11,5 @@ env['LIBS'] = ['qrencode'] + env['LIBS']
 env['LIBS'] = ['awtk_qr'] + env['LIBS']
 
 
-env.Program(os.path.join(BIN_DIR, 'demo_awtk_qr'), ['awtk_demo_main.c', 'awtk_demo_ui_app.c']);
+env.Program(os.path.join(BIN_DIR, 'demo_awtk_qr'), Glob('*.c'));
 
