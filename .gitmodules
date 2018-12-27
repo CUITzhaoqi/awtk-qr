@@ -1,0 +1,3 @@
+[submodule "awtk"]
+	path = awtk
+	url = https://github.com/zlgopen/awtk.git
