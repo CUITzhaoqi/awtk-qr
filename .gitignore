@@ -1,5 +1,4 @@
 bin
-lib
 .sconsign.dblite
 *.obj
 inc
