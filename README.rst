@@ -1,7 +1,9 @@
-AWTK-QR
+AWTK-QR 
 ^^^^^^^^^^
 
-.. image:: http://gitlab.zhaoqi.info:9998/awtk/awtk-qr/badges/master/pipeline.svg
+.. image:: http://gitlab.zhaoqi.info/awtk/awtk-qr/badges/master/pipeline.svg
+
+.. image:: http://gitlab.zhaoqi.info/awtk/awtk-qr/badges/master/coverage.svg
 
 AWTK-QR是AWTK的二维码插件，主要用于演示如何扩展 `AWTK <https://github.com/zlgopen/awtk>`_。
 
