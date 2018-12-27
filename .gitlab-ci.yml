@@ -4,16 +4,12 @@ variables:
 
 stages:
   - build
-  # - package
 
 build_job:
   stage: build
   script:
-    - echo %PATH%
-    - echo %APP_ENV% 
     - call %APP_ENV%\startup_app.bat
-    - echo %PATH%
     - scons -j8
   tags:
-    - win_qt_env
+    - win_awtk_env
 

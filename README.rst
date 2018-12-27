@@ -10,7 +10,7 @@ AWTK-QR是AWTK的二维码插件，主要用于演示如何扩展 `AWTK <https:/
 如何使用
 ---------
 
-首先克隆 awtk-qr。
+首先克隆 awtk-qr
 
 .. code-block:: bash
 
@@ -21,6 +21,22 @@ AWTK-QR是AWTK的二维码插件，主要用于演示如何扩展 `AWTK <https:/
 .. code-block:: bash
 
     git submodule update --init --recursive -- "awtk"
+
+目录树
+>>>>>>>>
+
+- awtk\\………………(awtk工程)
+- demo_qr\\………………(二维码插件的示例代码)
+- docs\\………………(相关文档)
+- scripts\\………………(awtk的工具脚本)
+- src\\………………(相关源码)
+
+    + qr\\……………………(awtk-qr插件)
+
+    - lib\\……………………(二维码编码库)
+- test\\………………(插件的测试)
+- .gitlab-ci.yml………………(持续集成脚本)
+- .SConstruct………………(scons 脚本)
 
 MACOS
 >>>>>>>>>
@@ -98,6 +114,11 @@ Windows
 .. code-block:: bash
 
     bin\demo_awtk_qr.exe
+
+文档
+--------
+
+`如何扩展AWTK——以二维码控件为例 <docs/expandawtk/index.rst>`_
 
 问题
 --------
