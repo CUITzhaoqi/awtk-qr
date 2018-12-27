@@ -452,7 +452,7 @@ window_open->window_open_impl->ui_loader_load->ui_loader_load_default，
         {WIDGET_TYPE_QR, qr_create}};
 
 上面通过静态来创建，我们也可以使用动态来注册，位于 **src/ext_widgets/ext_widgets.c**。
-对于AWTK的插件来说，是不能改动核心源码的，多以采用动态注册的方式来扩展。
+对于AWTK的插件来说，是不能改动核心源码的，所以采用动态注册的方式来扩展。
 
 .. code-block:: c
 
