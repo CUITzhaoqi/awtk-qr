@@ -31,9 +31,9 @@ def InstallDir(dst_dir,src_dir,name_pattern = '*'):
 def joinPath(root, subdir):
   return os.path.normpath(os.path.join(root, subdir))
 
-#awtk_cmd = 'cd ' + 'awtk&' + 'scons -j8'
-#print awtk_cmd
-#os.system('cd awtk&scons -j8')
+awtk_cmd = 'cd ' + 'awtk&' + 'scons -j8'
+print awtk_cmd
+os.system('cd awtk&scons -j8')
   
 OS_NAME=platform.system()
 
