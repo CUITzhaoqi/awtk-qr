@@ -107,13 +107,6 @@ Windows
 
 请访问 `issue <https://github.com/zlgopen/awtk/issues>`_:
 
-.. figure:: docs/img/test.jpg
-    :name:  测试1运行图
-    :align: center
-    :width: 300px
-
-    测试1运行图
-
 许可证
 ---------
 
