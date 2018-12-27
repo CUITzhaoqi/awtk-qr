@@ -46,8 +46,8 @@ ret_t demo_qr_pix_size_changed(void* ctx, event_t* e)
   
   widget_t *i_pix_size = (widget_t *)ctx;
   log_debug("----%d----\r\n",edit_get_int(i_pix_size));
-  widget_t *q_qr_code = widget_lookup_all(qr_test, "qr_code", TRUE);
-  qr_set_pixsize(q_qr_code, edit_get_int(i_pix_size));
+  // widget_t *q_qr_code = widget_lookup_all(qr_test, "qr_code", TRUE);
+  // qr_set_pixsize(q_qr_code, edit_get_int(i_pix_size));
   return RET_OK;
 }
 

@@ -4,3 +4,4 @@ bin
 inc
 *.bin
 *.pyc
+*.lib
