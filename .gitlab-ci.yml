@@ -12,4 +12,5 @@ build_job:
     - scons -j8
   tags:
     - win_awtk_env
+    - macos_env
 
