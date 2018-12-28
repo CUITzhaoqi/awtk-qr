@@ -5,11 +5,17 @@ variables:
 stages:
   - build
 
-build_job:
+build_macos:
+  stage: build
+  script:
+    - scons -j8
+  tags:
+    - macos_awtk_env
+
+build_win:
   stage: build
   script:
     - call %APP_ENV%\startup_app.bat
     - scons -j8
   tags:
     - win_awtk_env
-

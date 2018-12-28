@@ -34,10 +34,24 @@ BEGIN_C_DECLS
 #define WIDGET_PROP_PIX_SIZE "pix_size"
 
 /**
+ * @const WIDGET_PROP_PIX_SIZE
+ * 二维码像素映射关系
+ */
+#define WIDGET_STATE_SCANED "scaned"
+
+/**
  * @const WIDGET_TYPE_QR
  *
  */
 #define WIDGET_TYPE_QR "qr"
+
+/**
+ * @const STYLE_ID_MARGIN
+ * 边距。
+ */
+#define STYLE_ID_MG_COLOR "mg_color"
+
+
 
 /**
  * @class qr_t
@@ -56,6 +70,9 @@ typedef struct _qr_t {
    * 二维码每个像素在屏幕上的实际像素
    * (取值范围1-8)
    */
+
+  bitmap_t image;
+
   uint8_t pix_size;
   /**
    * 二维码内容
@@ -66,14 +83,10 @@ typedef struct _qr_t {
    */
   uint16_t qr_width;
   /**
-   * 二维码状态
-   * (是否被扫描)
+   * 是否有效
+   * (标识二维码是否有效)
    */
-  bool_t  scaned;
-  /*private*/
-  int32_t timer_id;
-  int32_t repeat_nr;
-  bool_t pressed;
+  bool_t  isvalid;
 } qr_t;
 
 /**

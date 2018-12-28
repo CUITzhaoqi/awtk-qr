@@ -1,8 +1,8 @@
 <window anim_hint="htranslate" theme="tab_bottom" style="sky">
 
-  <view x="0" y="5%" w="90%" h="80%" layout="row:1 col:0 m:10 s:10">
-    <view x="0" y="5%" w="50%" h="50%" layout="row:1 col:0 m:10 s:10">
-      <qr name="qr_code" style="qr_border" x="c" y="0" w="100%" h="100%" text="致远" pix_size="3"/>
+  <view x="0" y="5%" w="90%" h="50%" layout="row:1 col:0 m:10 s:10">
+    <view x="0" y="5%" w="50%" h="100%" layout="row:1 col:0 m:10 s:10">
+      <qr name="qr_code" style="qr_border" x="c" y="0" w="100%" h="50%" text="致远" pix_size="3"/>
     </view>
     <view x="50%" y="5%" w="50%" h="50%" layout="row:0 col:1 m:10 s:10">
       <list_item style="empty" children_layout="default(r=1,c=0)" x="0" y="0" w="90%" h="25">
@@ -13,8 +13,8 @@
         </edit>
       </list_item>
       <list_item style="empty" children_layout="default(r=1,c=0)" x="0" y="0" w="90%" h="25">
-        <label w="30%" text="Text"/>
-        <edit w="70%" left_margin="34" tips="显示内容" min="0" max="150" step="0.1">
+        <label w="30%" text="显示内容"/>
+        <edit w="70%" name="i_text" left_margin="34" tips="显示内容" min="0" max="150" step="0.1">
           <image draw_type="icon" image="find" x="0" y="0" w="30" h="100%" />
         </edit>
       </list_item>
@@ -26,6 +26,12 @@
       </list_item>
       <list_item style="empty" children_layout="default(r=1,c=0)" x="c" y="0" w="90%" h="50">
         <button name="sale_ok" style="select_style" x="c" y="0" w="25%" h="62" text="我选好了" />
+      </list_item>
+      <list_item style="empty" children_layout="default(r=1,c=0)" x="c" y="0" w="90%" h="50">
+        <button name="stat_change" x="c" y="0" w="50%" h="62" text="状态切换" />
+      </list_item>
+      <list_item style="empty" children_layout="default(r=1,c=0)" x="c" y="0" w="90%" h="50">
+        <button name="qr_code_create" x="c" y="0" w="50%" h="62" text="从代码创建" />
       </list_item>
     </view>
   </view>
