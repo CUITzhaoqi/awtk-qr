@@ -30,12 +30,17 @@ def InstallDir(dst_dir,src_dir,name_pattern = '*'):
 
 def joinPath(root, subdir):
   return os.path.normpath(os.path.join(root, subdir))
-
-awtk_cmd = 'cd ' + 'awtk&' + 'scons -j8'
-print awtk_cmd
-os.system('cd awtk&scons -j8')
   
 OS_NAME=platform.system()
+
+if OS_NAME == 'Windows':
+  os.system('cd awtk&scons -j8')
+
+if OS_NAME == 'Linux':
+  os.system('cd awtk;scons -j8')
+
+if OS_NAME == 'Darwin':
+  os.system('cd awtk;scons -j8')
 
 TK_ROOT = os.path.normpath(os.getcwd()+'/awtk')
 APP_ROOT = os.path.normpath(os.getcwd())
