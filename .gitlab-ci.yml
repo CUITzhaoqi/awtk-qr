@@ -11,6 +11,5 @@ build_job:
     - call %APP_ENV%\startup_app.bat
     - scons -j8
   tags:
-    - win_awtk_env
     - macos_env
 
