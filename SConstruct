@@ -42,6 +42,7 @@ if OS_NAME == 'Linux':
 if OS_NAME == 'Darwin':
   os.system('cd awtk;scons -j8')
 
+
 TK_ROOT = os.path.normpath(os.getcwd()+'/awtk')
 APP_ROOT = os.path.normpath(os.getcwd())
 APP_3RD_ROOT = joinPath(APP_ROOT, '3rd')

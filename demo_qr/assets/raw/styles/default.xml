@@ -535,8 +535,17 @@
 </view>
 
 <qr>
+  <style name="qr_border" margin="9" mg_color="#FFF8DC" fg_image="qq">
+    <normal/>
+    <scaned bg_image="check" />
+  </style>
+</qr>
+<!-- 
+<qr>
   <style name="qr_border" margin="9" bg_color="#FFF8DC" fg_image="qq">
     <normal/>
     <select bg_image="check" />
   </style>
 </qr>
+ -->
+
