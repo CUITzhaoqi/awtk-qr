@@ -18,7 +18,7 @@ build_win:
   script:
     - call %APP_ENV%\startup_app.bat
     - scons -j8
-    - call python.exe ./scripts/update_res.py all
+    - python.exe ./scripts/update_res.py all
   tags:
     - win_awtk_env
     
