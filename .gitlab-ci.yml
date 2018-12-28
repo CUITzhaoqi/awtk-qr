@@ -8,10 +8,10 @@ stages:
 build_macos:
   stage: build
   script:
-    - call %APP_ENV%\startup_app.bat
+    - brew install scons sdl2
     - scons -j8
   tags:
-    - macos_env
+    - macos_awtk_env
 
 build_win:
   stage: build
