@@ -18,6 +18,7 @@ build_win:
   script:
     - call %APP_ENV%\startup_app.bat
     - echo %PATH%
+    - python.exe scripts\update_res.py all
     - scons -j8
     - python.exe scripts\update_res.py all
   tags:
