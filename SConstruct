@@ -53,6 +53,7 @@ TK_SRC = joinPath(TK_ROOT, 'src')
 TK_3RD_ROOT = joinPath(TK_ROOT, '3rd')
 TK_BIN_DIR=joinPath(TK_ROOT, 'bin')
 TK_LIB_DIR=joinPath(TK_ROOT, 'lib')
+GTEST_ROOT = joinPath(TK_ROOT, '3rd/gtest/googletest')
 
 if OS_NAME == 'Windows':
   TK_ROOT=TK_ROOT.replace('\\', '\\\\');
@@ -67,7 +68,8 @@ os.environ['BIN_DIR'] = APP_BIN_ROOT;
 os.environ['TK_ROOT'] = TK_ROOT;
 os.environ['TK_LIB_DIR'] = TK_LIB_DIR;
 os.environ['TK_BIN_DIR'] = TK_BIN_DIR;
-
+os.environ['TK_3RD_ROOT'] = TK_3RD_ROOT;
+os.environ['GTEST_ROOT'] = GTEST_ROOT;
 
 OS_LIBS=[]
 OS_LIBPATH=[]
@@ -133,3 +135,4 @@ DefaultEnvironment(CCFLAGS = CCFLAGS,
   
 SConscript(['src/SConscript'] )
 SConscript(['demo_qr/SConscript'] )
+SConscript(['test/SConscript'] )
