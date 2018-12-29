@@ -16,6 +16,7 @@
  * History:
  * ================================================================
  * 2018-12-19 Zhaoqi <zq@zhaoqi.info> created
+ * 2018-12-29 Zhaoqi <zq@zhaoqi.info> update
  *
  */
 
@@ -78,6 +79,9 @@ static ret_t qr_set_prop(widget_t* widget, const char* name, const value_t* v) {
 static ret_t qr_destroy(widget_t* widget) {
   qr_t* qr = QR(widget);
 
+  if (qr->qr_text != NULL) {
+    TKMEM_FREE(qr->qr_text);
+  }
 
   return RET_OK;
 }
@@ -107,6 +111,14 @@ ret_t qr_set_pixsize(widget_t* widget, uint8_t pixsize)
   return RET_OK;
 }
 
+uint8_t qr_get_pixsize(widget_t* widget)
+{
+  return_value_if_fail(widget != NULL, RET_BAD_PARAMS);
+  qr_t* qr = QR(widget);
+
+  return qr->pix_size;
+}
+
 static ret_t qr_on_paint_self(widget_t* widget, canvas_t* c) {
 
   qr_t* qr = QR(widget);
@@ -117,16 +129,6 @@ static ret_t qr_on_paint_self(widget_t* widget, canvas_t* c) {
       int32_t margin = style_get_int(style, STYLE_ID_MARGIN, 2);
       int y = 0, x = 0, a = 0, b = 0;
       qr_code = qr->qr_code_data;
-
-      // bitmap_t* image = &(qr->image);
-      // rect_t src;
-      // rect_t dst;
-      // wh_t w = widget->w;
-      // wh_t h = widget->h;
-
-      // dst = rect_init(0, 0, w, h);
-      // src = rect_init(0, 0, image->w, image->h);
-      // canvas_draw_image(c, image, &src, &dst);
 
       for(y = 0; y < qr_code->width; y++) {
         for(x = 0; x < qr_code->width; x++) {
@@ -148,7 +150,6 @@ static ret_t qr_on_paint_self(widget_t* widget, canvas_t* c) {
 }
 
 static ret_t qr_on_paint_border(widget_t* widget, canvas_t* c) {
-  log_debug("\r\ntest2\r\n");
   qr_t* qr = QR(widget);
   if (qr->isvalid == FALSE) {
   
@@ -229,33 +230,6 @@ static ret_t qr_on_paint_end(widget_t* widget, canvas_t* c) {
 
 static ret_t qr_on_paint_background(widget_t* widget, canvas_t* c) {
   qr_t* qr = QR(widget);
-
-
-
-  // if (widget->state == WIDGET_STATE_SCANED){
-  //   color_t dimgrey = color_init(0X69, 0X69, 0X69, 0);
-  //   style_t* style = widget->astyle;
-  //   int32_t margin = style_get_int(style, STYLE_ID_MARGIN, 2);
-  //   const char* check_image_name = style_get_str(style, STYLE_ID_BG_IMAGE, NULL);
-  //   bitmap_t img;
-  //   rect_t r;
-
-  //   /* 二维码的logo图片 */
-  //   r = rect_init(0, 0, margin + qr->qr_width * qr->pix_size, margin + qr->qr_width * qr->pix_size);
-  //   // vgcanvas_t* vg = canvas_get_vgcanvas(c);
-  //   // if (vg != NULL) {
-  //   //   vgcanvas_set_fill_color(vg, dimgrey);
-  //   //   vgcanvas_translate(vg, c->ox, c->oy);
-  //   //   vgcanvas_rounded_rect(vg, 0, 0, widget->w, widget->h, 0);
-  //   //   vgcanvas_translate(vg, -c->ox, -c->oy);
-  //   //   vgcanvas_fill(vg);
-  //   // }
-  //   canvas_set_fill_color(c, dimgrey);   
-  //   canvas_fill_rect(c, 0, 0, margin + qr->qr_width * qr->pix_size, margin + qr->qr_width * qr->pix_size); 
-  //   // if (check_image_name && widget_load_image(widget, check_image_name, &img) == RET_OK) {
-  //   //   canvas_draw_image_ex(c, &img, IMAGE_DRAW_SCALE, &r);
-  //   // }
-  // }
   return RET_OK;
 }
 
@@ -275,29 +249,6 @@ static const widget_vtable_t s_qr_vtable = {.size = sizeof(qr_t),
                                                 .on_paint_background = qr_on_paint_background,
                                                 .on_paint_self = qr_on_paint_self};
 
-static ret_t image_component_init_image(bitmap_t* image, const char* name, int32_t w, int32_t h) {
-  int32_t size = w * h * 4;
-
-  memset(image, 0x00, sizeof(bitmap_t));
-  image->w = w;
-  image->h = h;
-  image->flags = 0;
-  image->name = name;
-#ifdef WITH_BITMAP_BGRA
-  image->format = BITMAP_FMT_BGRA8888;
-#else
-  image->format = BITMAP_FMT_RGBA8888;
-#endif /*WITH_BITMAP_BGRA*/
-  image->data = (uint8_t*)TKMEM_ALLOC(size);
-  return_value_if_fail(image->data != NULL, RET_OOM);
-  // image->destroy = bitmap_destroy_data;
-  bitmap_set_line_length(image, 0);
-
-  memset((void*)(image->data), 0xff, size);
-
-  return RET_OK;
-}
-
 
 widget_t* qr_create(widget_t* parent, xy_t x, xy_t y, wh_t w, wh_t h) {
   qr_t* qr = TKMEM_ZALLOC(qr_t);
@@ -305,7 +256,7 @@ widget_t* qr_create(widget_t* parent, xy_t x, xy_t y, wh_t w, wh_t h) {
   return_value_if_fail(qr != NULL, NULL);
 
   widget_init(widget, parent, &s_qr_vtable, x, y, w, h);
-
+  /* 默认的二维码状态 正常 */
   widget->state = WIDGET_STATE_NORMAL;
   /* 默认的二维码像素与屏幕像素的转化关系 */
   qr->pix_size = 1;
