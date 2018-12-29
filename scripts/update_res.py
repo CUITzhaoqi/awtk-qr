@@ -25,8 +25,8 @@ def buildTools():
 def run():
   common.updateRes()
 
-if sys.argv[1]=='all':
-  buildTools()
+# if sys.argv[1]=='all':
+#   buildTools()
 
 run()
 

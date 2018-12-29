@@ -9,6 +9,8 @@ build_macos:
   stage: build
   script:
     - scons -j8
+    - python ./scripts/update_res.py all
+    - ./bin/runTest
   tags:
     - macos_awtk_env
 
@@ -17,5 +19,16 @@ build_win:
   script:
     - call %APP_ENV%\startup_app.bat
     - scons -j8
+    - python.exe scripts\update_res.py all
+    - .\bin\runTest.exe
   tags:
     - win_awtk_env
+    
+build_ubuntu:
+  stage: build
+  script:
+    - scons -j8
+    - python ./scripts/update_res.py all
+    - ./bin/runTest
+  tags:
+    - ubuntu_awtk_env
