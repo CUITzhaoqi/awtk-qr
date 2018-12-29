@@ -22,7 +22,7 @@ INCLUDE_PATH = [TK_ROOT,
   os.path.join(APP_ROOT, 'src')]
 
 env['CPPPATH'] = INCLUDE_PATH
-env['LIBS'] = ['assets', 'image_gen', 'theme_gen', 'font_gen', 'str_gen', 'common'] + env['LIBS']
+env['LIBS'] = ['assets', 'image_gen', 'theme_gen', 'font_gen', 'str_gen', 'common', 'awtk_qr', 'qrencode'] + env['LIBS']
 
 SOURCES = [
  os.path.join(GTEST_ROOT, 'src/gtest-all.cc'),
