@@ -5,28 +5,27 @@ variables:
 stages:
   - build
 
-# build_macos:
-#   stage: build
-#   script:
-#     - scons -j8
-#     - python ./scripts/update_res.py all
-#   tags:
-#     - macos_awtk_env
+build_macos:
+  stage: build
+  script:
+    - scons -j8
+    - python ./scripts/update_res.py all
+  tags:
+    - macos_awtk_env
 
 build_win:
   stage: build
   script:
     - call %APP_ENV%\startup_app.bat
-    - echo %PATH%
     - scons -j8
     - python.exe scripts\update_res.py all
   tags:
     - win_awtk_env
     
-# build_ubuntu:
-#   stage: build
-#   script:
-#     - scons -j8
-#     - python ./scripts/update_res.py all
-#   tags:
-#     - ubuntu_awtk_env
+build_ubuntu:
+  stage: build
+  script:
+    - scons -j8
+    - python ./scripts/update_res.py all
+  tags:
+    - ubuntu_awtk_env
