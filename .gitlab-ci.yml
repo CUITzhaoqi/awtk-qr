@@ -20,7 +20,6 @@ build_win:
     - echo %PATH%
     - python.exe scripts\update_res.py all
     - scons -j8
-    - python.exe scripts\update_res.py all
   tags:
     - win_awtk_env
     
