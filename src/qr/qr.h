@@ -24,7 +24,7 @@
 #define TK_QR_H
 
 #include "base/widget.h"
-#include "lib/qrencode/qrencode.h"
+#include "qrencode/qrencode.h"
 
 BEGIN_C_DECLS
 

@@ -120,6 +120,8 @@ Windows
 
 `如何扩展AWTK——以二维码控件为例 <docs/expandawtk/index.rst>`_
 
+`如何将AWTK的二维码控件加入AWORKS <docs/aworksport/index.rst>`_
+
 问题
 --------
 

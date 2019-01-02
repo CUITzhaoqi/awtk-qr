@@ -23,7 +23,7 @@
 #include "tkc/mem.h"
 #include "base/timer.h"
 #include "tkc/utils.h"
-#include "qr.h"
+#include "qr/qr.h"
 #include "base/widget_vtable.h"
 #include "base/image_manager.h"
 

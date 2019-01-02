@@ -116,6 +116,7 @@ CCFLAGS=OS_FLAGS + COMMON_CCFLAGS
 CPPPATH = [
   APP_ROOT,
   os.path.join(APP_ROOT, 'src'),
+  os.path.join(APP_ROOT, 'src/lib'),
   TK_ROOT,
   TK_SRC,
   TK_3RD_ROOT,
