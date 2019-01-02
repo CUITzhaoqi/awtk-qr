@@ -128,9 +128,9 @@ static ret_t demo_qr_hide_qr(void* ctx, event_t* e)
   widget_t *q_qr_code = widget_lookup(qr_test, "qr_code", TRUE);
   widget_set_visible(q_qr_code, !q_qr_code->visible, FALSE);
   if (q_qr_code->visible) {
-    widget_set_text_utf8(b_hide_qr, "显示QR");
+    widget_set_text_utf8(b_hide_qr, "show_qr");
   } else {
-    widget_set_text_utf8(b_hide_qr, "隐藏QR");
+    widget_set_text_utf8(b_hide_qr, "hide_qr");
   }
 
   return RET_OK;
@@ -144,9 +144,9 @@ static ret_t on_show_fps(void* ctx, event_t* e) {
   widget_invalidate(widget, NULL);
   window_manager_set_show_fps(widget, !wm->show_fps);
   if (wm->show_fps) {
-    widget_set_text_utf8(button, "隐藏FPS");
+    widget_set_text_utf8(button, "hide_fps");
   } else {
-    widget_set_text_utf8(button, "显示FPS");
+    widget_set_text_utf8(button, "show_fps");
   }
   
 

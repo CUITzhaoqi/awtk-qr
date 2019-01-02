@@ -19,7 +19,8 @@ INCLUDE_PATH = [TK_ROOT,
   os.path.join(GTEST_ROOT, 'src'),
   os.path.join(GTEST_ROOT, 'include'),
   os.path.join(GTEST_ROOT, 'make'),
-  os.path.join(APP_ROOT, 'src')]
+  os.path.join(APP_ROOT, 'src'),
+  os.path.join(APP_ROOT, 'src/lib')]
 
 env['CPPPATH'] = INCLUDE_PATH
 env['LIBS'] = ['assets', 'image_gen', 'theme_gen', 'font_gen', 'str_gen', 'common', 'awtk_qr', 'qrencode'] + env['LIBS']
