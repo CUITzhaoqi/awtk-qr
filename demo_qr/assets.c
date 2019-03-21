@@ -110,14 +110,14 @@
 #endif/*WITH_STB_IMAGE*/
 #ifdef WITH_VGCANVAS
 #endif/*WITH_VGCANVAS*/
-#ifdef WITH_STB_FONT
+#if defined(WITH_STB_FONT) || defined(WITH_FT_FONT)
 #ifdef WITH_MINI_FONT
 #include "assets/inc/fonts/default.mini.res"
 #else/*WITH_MINI_FONT*/
 #include "assets/inc/fonts/default.res"
 #endif/*WITH_MINI_FONT*/
-#else/*WITH_STB_FONT*/
-#endif/*WITH_STB_FONT*/
+#else/*WITH_STB_FONT or WITH_FT_FONT*/
+#endif/*WITH_STB_FONT or WITH_FT_FONT*/
 #endif/*WITH_FS_RES*/
 
 ret_t assets_init(void) {

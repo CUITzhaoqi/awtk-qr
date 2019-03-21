@@ -9,11 +9,11 @@ if APP_ROOT.endswith('scripts'):
   APP_ROOT=os.path.dirname(APP_ROOT)
 
 os.chdir(APP_ROOT);
-AWTK_ROOT=APP_ROOT
+AWTK_ROOT=os.path.normpath(os.getcwd()+'/awtk')
 ASSETS_ROOT=common.joinPath(APP_ROOT, 'demo_qr/assets')
 ASSET_C=common.joinPath(APP_ROOT, 'demo_qr/assets.c')
 
-common.init(AWTK_ROOT+ '/awtk', ASSETS_ROOT, ASSET_C);
+common.init(AWTK_ROOT, ASSETS_ROOT, ASSET_C);
 
 def buildTools():
   os.system('scons '+common.toExe('resgen'))
@@ -25,8 +25,8 @@ def buildTools():
 def run():
   common.updateRes()
 
-# if sys.argv[1]=='all':
-#   buildTools()
+if sys.argv[1]=='all':
+  buildTools()
 
 run()
 
