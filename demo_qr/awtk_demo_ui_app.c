@@ -22,6 +22,7 @@
 #include "awtk.h"
 #include "tkc/mem.h"
 #include "widgets/label.h"
+#include "base/idle.h"
 #include "base/timer.h"
 #include "widgets/button.h"
 #include "widgets/dialog.h"
