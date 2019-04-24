@@ -2,6 +2,9 @@ variables:
   #此处对git的子模块进行递归更新
   GIT_SUBMODULE_STRATEGY: recursive
 
+image:
+  name: docker.zhaoqi.info/awtk/ubuntu:awtk
+
 stages:
   - build
 
@@ -32,3 +35,18 @@ build_ubuntu:
     - ./bin/runTest
   tags:
     - ubuntu_awtk_env
+
+build_docker:
+  stage: build
+  script:
+    - ls
+    - pwd
+    - python -V
+    - scons -j8
+  tags:
+    - docker
+  artifacts:
+    name: artifacts
+    expire_in: 1 day
+    paths:
+     - awtk/bin
