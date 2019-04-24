@@ -8,14 +8,15 @@ image:
 stages:
   - build
 
-build_macos:
-  stage: build
-  script:
-    - scons -j8
-    - python ./scripts/update_res.py all
-    - ./bin/runTest
-  tags:
-    - macos_awtk_env
+# 目前的MAC的环境缺失了 暂时不编译MAC上的测试
+# build_macos:
+#   stage: build
+#   script:
+#     - scons -j8
+#     - python ./scripts/update_res.py all
+#     - ./bin/runTest
+#   tags:
+#     - macos_awtk_env
 
 build_win:
   stage: build
@@ -26,23 +27,23 @@ build_win:
     - .\bin\runTest.exe
   tags:
     - win_awtk_env
-    
-build_ubuntu:
+
+# 后面将不在 ubuntu的实体机中编译，统一在docker环境中编译
+# build_ubuntu:
+#   stage: build
+#   script:
+#     - scons -j8
+#     - python ./scripts/update_res.py all
+#     - ./bin/runTest
+#   tags:
+#     - ubuntu_awtk_env
+
+build_docker:
   stage: build
   script:
     - scons -j8
     - python ./scripts/update_res.py all
     - ./bin/runTest
-  tags:
-    - ubuntu_awtk_env
-
-build_docker:
-  stage: build
-  script:
-    - ls
-    - pwd
-    - python -V
-    - scons -j8
   tags:
     - docker
   artifacts:
