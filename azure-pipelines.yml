@@ -30,6 +30,6 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    pip install pytest pytest-azurepipelines
-    pytest
-  displayName: 'pytest'
+    scons -j8
+  displayName: 'Build target'
+
